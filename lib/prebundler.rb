@@ -10,6 +10,7 @@ module Prebundler
   autoload :GemfileSubset,      'prebundler/gemfile_subset'
   autoload :GemRef,             'prebundler/gem_ref'
   autoload :GitGemRef,          'prebundler/git_gem_ref'
+  autoload :MinioBackend,       'prebundler/minio_backend'
   autoload :S3Backend,          'prebundler/s3_backend'
   autoload :WritePipe,          'prebundler/write_pipe'
 
