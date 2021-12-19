@@ -4,7 +4,7 @@ require 'aws-sdk'
 
 module Prebundler
   class MinioBackend
-    attr_reader :access_key_id, :secret_access_key, :bucket, :region
+    attr_reader :access_key_id, :secret_access_key, :bucket, :endpoint
 
     def initialize(options = {})
       @bucket             = options.fetch(:bucket)
@@ -12,7 +12,7 @@ module Prebundler
       @client             = options.fetch(:client, nil)
       @access_key_id      = options.fetch(:access_key_id, nil)
       @secret_access_key  = options.fetch(:secret_access_key, nil)
-      @region             = options.fetch(:region, nil) # it's not the region { ENV['AWS_REGION'] || 'us-east-1' }
+      @endpoint           = options.fetch(:endpoint, nil)
     end
 
     def store_file(source_file, dest_file)
@@ -62,10 +62,6 @@ module Prebundler
     end
 
     private
-
-    def endpoint
-      @endpoint ||= "http://deis-minio.#{region}.svc.cluster.local:9000"
-    end
 
     def client
       @client ||= Aws::S3::Client.new(endpoint: endpoint, credentials: credentials,
