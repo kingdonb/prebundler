@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module Prebundler
-  VERSION = '0.13.0-alpha1'
+  VERSION = '0.13.0-alpha2'
 end
