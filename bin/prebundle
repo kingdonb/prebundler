@@ -48,7 +48,7 @@ command :install do |c|
   c.flag :without
 
   c.desc 'Generate binstubs for installed gems.'
-  c.default_value true
+  c.default_value false
   c.switch :binstubs
 
   c.desc 'Retry failed network requests n times (currently not implemented).'

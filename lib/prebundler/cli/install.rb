@@ -20,7 +20,7 @@ module Prebundler
         prepare
         install
         update_bundle_config
-        # generate_binstubs
+        generate_binstubs
         # always run `bundle install` just in case
         bundle_install
       rescue BundleFailedError => e
