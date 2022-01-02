@@ -19,6 +19,9 @@ Gem::Specification.new do |s|
   # @TODO: move s3 support into separate gem
   s.add_dependency 'aws-sdk', '~> 2.0'
 
+  # with rails >6 or ruby >3.0.0 webrick is no longer baked in
+  s.add_dependency 'webrick', '~> 1.7'
+
   s.executables << 'prebundle'
 
   s.require_path = 'lib'
